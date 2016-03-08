@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5.1'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -22,6 +22,15 @@ gem 'puma'
 gem 'devise'
 gem 'country_select'
 gem 'activeadmin', '~> 1.0.0.pre2'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
 group :test do
   gem 'minitest-rails'
