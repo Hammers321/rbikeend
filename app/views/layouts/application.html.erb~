@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+  <title>RailsStore</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+
+	<%= render "nav" %>
+	
+ 	<div id="container">
+	  <%= yield %>
+	</div>
+
+	<div id="footer">
+	 <h6 class="footertext">&copy; Clontarf rent bike store; 2016</h6>
+	</div>
+
+<div style="clear:both">&nbsp;</div>
+</body>
+</html>

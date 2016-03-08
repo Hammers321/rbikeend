@@ -1,0 +1,23 @@
+%h1 Checkout
+
+%h2 Yoy are checking out for booking bike
+
+%ul
+  -@cart.items.each do |item|
+    %li
+      =item.quantity
+      =item.product.name
+      =item.total_price
+
+=form_for @order_form, url: orders_path do |f|
+  =f.fields_for :user, @order_form.user do |u|
+    .form-group
+      %p=u.text_field :name, placeholder: "Name", class: "form-control input-lg"
+      %p
+        =u.text_field :email, placeholder: "Email", class: "form-control"
+    .form-group
+      .row
+        %p.col-md-6=u.text_field :address, placeholder: "Address", class: "form-control"
+        %p.col-md-6=u.text_field :name, placeholder: "Postal code", class: "form-control"
+        %p.col-md-6=u.text_field :name, placeholder: "City", class: "form-control"
+      %p=u.country_select :country, {priority_countries: ["GB", "US", "ES", "PT"]}, {class: "form-control"}

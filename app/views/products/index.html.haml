@@ -1,0 +1,39 @@
+%h1 Listing products
+
+= form_tag products_path, method: 'get' do 
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search" 
+
+%table.table.table-hover
+  %thead    
+  %tr
+  %th Name
+  %th Price
+  %th Image
+  %th Description
+  %th Size
+  %th Brand
+  %th
+
+
+
+    - @products.each do |product|
+      %tr
+        %td= link_to product.name, product
+        %td= product.price
+        %td= image_tag product.image.thumb
+        %td= product.description
+        %td= product.size_type
+        %td= product.brand
+        %td
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_product_path(product)
+            = link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+	
+
+%br
+-if current_user && current_user.admin?
+  %p= link_to 'New Product', new_product_path, class: "btn btn-primary"
+

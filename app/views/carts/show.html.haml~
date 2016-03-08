@@ -1,0 +1,14 @@
+
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Quantity
+      %th Product
+      %th Price
+
+  -@cart.items.each do |item|
+    %tr
+      %td=item.quantity
+      %td=item.product.name
+      %td=item.total_price

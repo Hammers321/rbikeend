@@ -1,0 +1,16 @@
+
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Quantity
+      %th Product
+      %th Price
+
+  -@cart.items.each do |item|
+    %tr
+      %td=item.quantity
+      %td=item.product.name
+      %td=item.total_price
+
+%p=link_to "Checkout", checkout_cart_path, class: "btn btn-primary"

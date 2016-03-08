@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+  <title>RailsStore</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+	<%= render "nav" %>
+	
+ <div id="container">
+	<div id="container-products">
+	  	
+	  <%= content_tag :div, notice, class: "bg-success" %>
+	  <%= content_tag :div, alert, class: "bg-danger" %>
+	  <%= yield %>
+	</div>
+
+
+
+	<div id="sidebar">
+		<h2>sidebar</h2>
+		<aside id="text-6" class="widget widget_text"><h3 class="widget-title">Our Prices</h3>			
+			<div class="textwidget">
+				<strong>Standard Bikes</strong>
+				1 hr – €5<br>
+				3 hours – €10<br>
+				Full Day – €15<br><br>
+				<strong>Tandem &amp; Electric Bikes</strong><br>
+				€10 for 1 hour<br>
+				€20 for 3 hours<br>
+				€30 for full Day<br><br>
+				<strong>Carry Along for Kids</strong><br>
+				From €2.50 for Child’s Seat<br><br>
+				<strong>Trailers (Fits up to 2 kids)</strong><br>
+				From €10
+			</div>
+		</aside>			
+	</div>
+		
+
+		
+	<div style="clear:both">&nbsp;</diV>
+ </div>
+<div id="footer">
+		<h6 class="footertext">&copy; Clontarf rent bike store; 2016</h6>
+	</div>
+
+
+</body>
+</html>
