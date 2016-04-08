@@ -10,7 +10,15 @@
   -@cart.items.each do |item|
     %tr
       %td=item.quantity
-      %td=item.product.name
+      %td
+        
+        =link_to item.product.name, item.product
       %td=item.total_price
+  %tfoot
+    %tr
+      %td.text-right
+        %strong
+          Total:
+          =@cart.total_price
 
 %p=link_to "Checkout", checkout_cart_path, class: "btn btn-primary"

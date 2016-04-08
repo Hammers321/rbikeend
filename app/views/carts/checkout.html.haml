@@ -8,6 +8,11 @@
       =item.quantity
       =item.product.name
       =item.total_price
+      
+%p
+  %strong
+  Total price:
+  =@cart.total_price
 
 =form_for @order_form, url: orders_path do |f|
   =f.fields_for :user, @order_form.user do |u|
